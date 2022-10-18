@@ -4,6 +4,7 @@
 
 a=10 
 b=20 
+c=355
 # c=1000   # local variables
 
 # No concept of data types in shell-scripting.
@@ -15,7 +16,7 @@ echo "$a"
 echo "${b}"
 echo '${a}'
 
-echo $c
+
 
 echo "printing the value of c - $c"
 
