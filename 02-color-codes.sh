@@ -19,3 +19,6 @@
 # echo -e "\e[COLORCODEm  Your Text \e[0m"
 
 echo -e "\e[33m I am printing yellow \e[0m"
+echo -e "\e[34m I am printing blue \e[0m"
+echo -e "\e[36m I am printing cyan \e[0m"
+echo -e "\e[32m I am printing green \e[0m"
