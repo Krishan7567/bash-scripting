@@ -15,7 +15,7 @@ echo "$a"
 echo "${b}"
 echo '${a}'
 
-echo $c=555
+echo $c
 
 echo "printing the value of c - $c"
 
