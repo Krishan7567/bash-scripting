@@ -14,3 +14,8 @@ echo $$   # Gives you the PID of the current process
 # On command you can supply 9 variables 
 # Ex  
 #  sh abc.sh 10 20 30 40
+
+echo $*
+echo $@
+echo $#
+echo $$
