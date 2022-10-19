@@ -22,5 +22,4 @@ case $ACTION in
 
 esac
 
-start
 
