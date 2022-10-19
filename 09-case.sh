@@ -19,3 +19,5 @@ case $ACTION in
         ;;
     *)
         echo "Valid options are either start or stop"
+
+esac
