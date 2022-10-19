@@ -19,5 +19,6 @@ case $ACTION in
         ;;
     *)
         echo -e "\e[31m Valid options are either start or stop \e[0m"
-
+start
+stop
 esac
