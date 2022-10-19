@@ -9,3 +9,7 @@ sample() {
 #calling function sample
 
 sample
+
+sample
+sample
+sample
