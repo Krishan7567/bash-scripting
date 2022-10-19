@@ -5,3 +5,5 @@
 sample() {
     echo "I am a function named sample"
 }
+
+echo "hello world"
