@@ -1,7 +1,10 @@
 #!/bin/bash
 
-a="abc"
+# Demo on if & if-else 
 
-if [ "$a == "abc" ]; then
-    echo -e "\e[32m Both of are equal \e[0m"
-fi
+a="abc" 
+
+if  [ "$a" == "abc" ]; then 
+    echo -e "\e[32m Both of the are equal \e[0m"
+
+fi 
