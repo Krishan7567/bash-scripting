@@ -23,7 +23,7 @@ echo -n "Installing Nginx:"
 yum install nginx -y &>> /tmp/$component.log
 stat
 
-echo -n "Downloading the $component:"
+echo -n "Downloading the component:"
 curl -s -L -o /tmp/$component.zip "https://github.com/stans-robot-project/$component/archive/main.zip"
 stat
 
