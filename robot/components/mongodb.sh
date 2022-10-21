@@ -2,35 +2,18 @@
 
 set -e
 
-component=frontend
+component=mongodb
 
 source components/common.sh
 
-echo -n "Installing Nginx:"
-yum install FGFDGDFGGnginx -y &>> LOGFILE
-stat
+echo -n "Configuring the repo:"
+curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo
 
-echo -n "Downloading the component:"
-curl -s -L -o /tmp/$component.zip "https://github.com/stans-robot-project/$component/archive/main.zip"
-stat
-
-echo -n "Performing cleanup:"
-cd /usr/share/nginx/html
-rm -rf *
-stat
-
-echo -n "Unzipping the $components:"
-unzip /tmp/$component.zip &>> LOGFILE
-mv $component-main/* .
-mv static/* .
-rm -rf $component-main README.md
-stat
-
-echo -n "Configuring the reverse proxy:"
-mv localhost.conf /etc/nginx/default.d/roboshop.conf
+echo -n "Installing Mongodb:"
+yum install -y mongodb-org &>> LOGFILE
 stat
 
 echo -n "Starting frontend services:"
-systemctl enable nginx &>> LOGFILE
-systemctl start nginx &>> LOGFILE
+systemctl enable mongod &>> LOGFILE
+systemctl start mongod &>> LOGFILE
 stat
