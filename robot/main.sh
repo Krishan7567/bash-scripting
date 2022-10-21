@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "I am main component"
+bash components/$1.sh
