@@ -10,12 +10,13 @@ if [ $USERID -ne 0 ] ; then
     exit 1
 fi
 
-
+echo "Installing Nginx:"
 yum install nginx -y &>> /tmp/frontend.log
 
+echo "Downloading the component:"
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 
-
+echo "Performing cleanup:"
 cd /usr/share/nginx/html
 
 rm -rf *
