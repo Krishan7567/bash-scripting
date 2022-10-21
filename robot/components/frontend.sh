@@ -45,3 +45,4 @@ stat
 echo -n "Starting Frontend services:"
 systemctl enable nginx &>> /tmp/frontend.log
 systemctl start nginx &>> /tmp/frontend.log
+stat
