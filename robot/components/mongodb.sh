@@ -14,7 +14,12 @@ echo -n "Installing Mongodb:"
 yum install -y mongodb-org &>> LOGFILE
 stat
 
-echo -n "Starting frontend services:"
+echo -n "Updating the mongodb conf:"
+sed -i -e 's/127.0.0.1/0.0.0.0/' mongodb.conf
+stat
+
+
+echo -n "Starting mongodb services:"
 systemctl enable mongod &>> LOGFILE
 systemctl start mongod &>> LOGFILE
 stat
