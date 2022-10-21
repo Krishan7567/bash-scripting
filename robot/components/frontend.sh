@@ -23,7 +23,7 @@ stat() {
 
 echo -n "Installing Nginx:"
 yum install FGFDGDFGGnginx -y &>> LOGFILE
-stat
+stat $?
 
 echo -n "Downloading the component:"
 curl -s -L -o /tmp/$component.zip "https://github.com/stans-robot-project/$component/archive/main.zip"
