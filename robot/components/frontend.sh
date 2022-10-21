@@ -38,7 +38,7 @@ mv static/* .
 rm -rf frontend-main README.md
 stat
 
-echo -n "Configuring the reverse proxy"
+echo -n "Configuring the reverse proxy:"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat
 
