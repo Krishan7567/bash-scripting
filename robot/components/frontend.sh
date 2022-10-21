@@ -5,7 +5,7 @@ set -e
 # verify the script is been executed as root user
 USERID=$(id -u)
 
-if [$USERID -ne 0] ; then
+if [ $USERID -ne 0 ] ; then
     echo -e "\e[31m you must run the script as a root user or sudo previledge \e[0m"
     exit 1
 fi
