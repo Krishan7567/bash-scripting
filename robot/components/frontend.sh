@@ -10,7 +10,7 @@ if [ $USERID -ne 0 ] ; then
     exit 1
 fi
 
-echo "Installing Nginx:"
+echo -n "Installing Nginx:"
 yum install nginx -y &>> /tmp/frontend.log
 
 if [ $? -eq 0 ]; then
@@ -19,7 +19,7 @@ else
     echo -e "\e[31m Failure \e[0m"
 fi
 
-echo "Downloading the component:"
+echo -n "Downloading the component:"
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 
 if [ $? -eq 0 ]; then
@@ -28,7 +28,7 @@ else
     echo -e "\e[31m Failure \e[0m"
 fi
 
-echo "Performing cleanup:"
+echo -n "Performing cleanup:"
 cd /usr/share/nginx/html
 
 rm -rf *
