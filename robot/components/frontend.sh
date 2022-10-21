@@ -43,7 +43,7 @@ echo -n "Configuring the reverse proxy:"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat
 
-echo -n "Starting $component services:"
+echo -n "Starting frontend services:"
 systemctl enable nginx &>> /tmp/$component.log
 systemctl start nginx &>> /tmp/$component.log
 stat
