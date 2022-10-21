@@ -31,7 +31,7 @@ cd /usr/share/nginx/html
 rm -rf *
 stat
 
-echo -n "Unzipping the components"
+echo -n "Unzipping the components:"
 unzip /tmp/frontend.zip &>> /tmp/frontend.log
 mv frontend-main/* .
 mv static/* .
