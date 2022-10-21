@@ -5,6 +5,8 @@ set -e
 # verify the script is been executed as root user
 USERID=$(id -u)
 component=frontend
+LOGFILE=/tmp/$component.log
+
 
 if [ $USERID -ne 0 ] ; then
     echo -e "\e[31m you must run the script as a root user or sudo previledge \e[0m"
@@ -20,7 +22,7 @@ stat() {
 }
 
 echo -n "Installing Nginx:"
-yum install nginx -y &>> /tmp/$component.log
+yum install nginx -y &>> LOGFILE
 stat
 
 echo -n "Downloading the component:"
@@ -33,7 +35,7 @@ rm -rf *
 stat
 
 echo -n "Unzipping the $components:"
-unzip /tmp/$component.zip &>> /tmp/$component.log
+unzip /tmp/$component.zip &>> LOGFILE
 mv $component-main/* .
 mv static/* .
 rm -rf $component-main README.md
@@ -44,6 +46,6 @@ mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat
 
 echo -n "Starting frontend services:"
-systemctl enable nginx &>> /tmp/$component.log
-systemctl start nginx &>> /tmp/$component.log
+systemctl enable nginx &>> LOGFILE
+systemctl start nginx &>> LOGFILE
 stat
