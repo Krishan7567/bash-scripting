@@ -7,7 +7,7 @@ component=frontend
 source components/common.sh
 
 echo -n "Installing Nginx:"
-yum install FGFDGDFGGnginx -y &>> LOGFILE
+yum install nginx -y &>> LOGFILE
 stat
 
 echo -n "Downloading the component:"
